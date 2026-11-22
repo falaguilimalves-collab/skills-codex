@@ -306,6 +306,13 @@ button {
   transition: var(--transition-smooth);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .header-phone-link {
   display: inline-flex;
   align-items: center;
@@ -1667,7 +1674,14 @@ button {
     display: none;
   }
 
-  .header-phone-link {
+  .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.header-phone-link {
     padding: 8px;
     width: 38px;
     height: 38px;
