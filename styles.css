@@ -306,14 +306,95 @@ button {
   transition: var(--transition-smooth);
 }
 
+.header-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--navy);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(9, 45, 80, 0.05);
+  border: 1px solid rgba(9, 45, 80, 0.08);
+  transition: var(--transition-smooth);
+}
+
+.header-phone-link:hover {
+  background: var(--navy);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(9, 45, 80, 0.15);
+}
+
+.header-phone-link svg {
+  color: var(--blue-accent);
+  transition: color var(--duration-fast);
+}
+
+.header-phone-link:hover svg {
+  color: #ffffff;
+}
+
 /* ==========================================================================
-   HERO EDITORIAL REFINADO (ANAI + APPLE)
+   HERO EDITORIAL & CINEMÁTICO COM FUNDO DA FÁBRICA (ANAI + APPLE)
    ========================================================================== */
 
 .hero-section {
-  padding: 70px 0 60px;
   position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 85px;
   overflow: hidden;
+  background: var(--navy-deep);
+  color: #ffffff;
+}
+
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.08);
+  animation: heroKenBurns 20s ease-in-out infinite alternate;
+  filter: saturate(1.15) brightness(0.6);
+}
+
+@keyframes heroKenBurns {
+  0% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 25, 46, 0.82) 0%,
+    rgba(9, 45, 80, 0.68) 45%,
+    rgba(6, 25, 46, 0.94) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.hero-container-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 .hero-badge-container {
@@ -328,21 +409,23 @@ button {
   gap: 8px;
   padding: 6px 16px;
   border-radius: var(--radius-pill);
-  background: rgba(39, 105, 166, 0.08);
-  border: 1px solid rgba(39, 105, 166, 0.15);
-  color: var(--blue-primary);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #e2effd;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .hero-badge-dot {
   width: 7px;
   height: 7px;
-  background: var(--blue-accent);
+  background: #4facfe;
   border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(39, 105, 166, 0.2);
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.3);
   animation: pulse-dot 2.5s infinite;
 }
 
@@ -353,7 +436,7 @@ button {
 
 .hero-content {
   text-align: center;
-  max-width: 890px;
+  max-width: 900px;
   margin-inline: auto;
 }
 
@@ -361,27 +444,29 @@ button {
   font-family: var(--font-serif);
   font-size: clamp(2.6rem, 5.2vw, 4.2rem);
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.025em;
-  color: var(--navy-deep);
+  color: #ffffff;
   margin-bottom: 24px;
   text-wrap: balance;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 
 .hero-title em {
   font-style: italic;
   font-weight: 400;
-  color: var(--blue-primary);
+  color: #79b7ed;
 }
 
 .hero-subtitle {
   font-size: clamp(1.05rem, 1.8vw, 1.22rem);
   line-height: 1.65;
-  color: var(--text-muted);
-  max-width: 720px;
+  color: #dbe7f3;
+  max-width: 740px;
   margin-inline: auto;
-  margin-bottom: 36px;
+  margin-bottom: 38px;
   font-weight: 400;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero-cta-group {
@@ -398,13 +483,15 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  padding: 10px 24px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--border-subtle);
+  padding: 12px 28px;
+  background: rgba(6, 25, 46, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  font-size: 0.84rem;
+  color: #e2edfa;
   font-weight: 600;
 }
 
@@ -415,13 +502,13 @@ button {
 }
 
 .trust-item svg {
-  color: var(--blue-primary);
+  color: #79b7ed;
 }
 
 .trust-separator {
   width: 4px;
   height: 4px;
-  background: var(--steel);
+  background: rgba(255, 255, 255, 0.35);
   border-radius: 50%;
 }
 
@@ -1574,6 +1661,17 @@ button {
   /* Cabeçalho compacto em smartphone */
   .brand-logo-img {
     height: 38px;
+  }
+
+  .header-phone-link span {
+    display: none;
+  }
+
+  .header-phone-link {
+    padding: 8px;
+    width: 38px;
+    height: 38px;
+    justify-content: center;
   }
 
   /* Hero Section Mobile */
